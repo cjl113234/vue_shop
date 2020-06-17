@@ -1,14 +1,24 @@
 <template>
   <div>
-    <h3>Welcome</h3>
+    <!-- 2.为Echarts准备一个Dom -->
+    <el-row>
+      <el-col :span="6">
+        <h1>Welcome</h1>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
+
 export default {
 
 }
 </script>
 
-<style lang="less" scoped>
+<style>
+div {
+  margin: 0;
+  padding: 0;
+}
 </style>

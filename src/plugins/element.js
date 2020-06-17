@@ -52,5 +52,4 @@ Vue.use(Pagination)
 Vue.use(Dialog)
 // 将弹框组件全局挂在到VUe原形实例
 Vue.prototype.$message = Message
-// 将MessageBox组件全局挂在到VUe原形实例
 Vue.prototype.$confirm = MessageBox.confirm
