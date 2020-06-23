@@ -133,14 +133,13 @@
       <el-form :model="editRolesForm"
                :rules="editRolesFormRules"
                ref="editRolesFormRef"
-               label-width="70px">
+               label-width="100px">
         <el-form-item label="角色 ID">
           <el-input v-model="editRolesForm.roleId"
                     prop="roleId"
                     disabled></el-input>
         </el-form-item>
-        <el-form-item label="
-                    角色名称"
+        <el-form-item label="角色名称"
                       prop="roleName">
           <el-input v-model="editRolesForm.roleName"></el-input>
         </el-form-item>
@@ -329,7 +328,7 @@ export default {
     // 根据ID删除对应的权限
     async removeRightByID (role, rightId) {
       // 弹框提示用户是否要删除
-      const confirmResult = await this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+      const confirmResult = await this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
@@ -341,9 +340,9 @@ export default {
       // console.log('确认删除')
       const { data: res } = await this.$http.delete(`roles/${role.id}/rights/${rightId}`)
       if (res.meta.status !== 200) {
-        return this.$message.error('删除权限失败')
+        return this.$message.error('删除权限失败!')
       }
-      this.$message.error('已删除该权限')
+      this.$message.error('已删除该权限!')
       // this.getRolesList()
       role.children = res.data
     },
