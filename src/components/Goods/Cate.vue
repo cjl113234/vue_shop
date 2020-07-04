@@ -90,6 +90,7 @@
         </el-form-item>
 
         <el-form-item label="父级分类：">
+          <!-- 级联选择框 -->
           <!-- options用来指定数据源 -->
           <!-- props用来指定配置对象 -->
           <el-cascader v-model="selectedKeys"
@@ -335,9 +336,9 @@ export default {
       // console.log('确认删除')
       const { data: res } = await this.$http.delete('categories/' + id)
       if (res.meta.status !== 200) {
-        return this.$message.error('删除权限失败！')
+        return this.$message.error('删除商品失败！')
       }
-      this.$message.success('删除权限成功！')
+      this.$message.success('删除商品成功！')
       this.getCateList()
     }
   }
